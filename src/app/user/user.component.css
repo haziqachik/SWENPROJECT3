@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+
+.container{
+    text-align: center;
+}
+.btn{
+    text-align: center;
+    border: 2px solid #008CBA;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.btn:hover {
+    background-color: rgb(7, 47, 223);
+    color: rgb(255, 255, 255);
+  }
+  

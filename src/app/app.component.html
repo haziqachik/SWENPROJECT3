@@ -1,0 +1,22 @@
+
+<nav class="navbar navbar-light bg-light mb-5">
+  <a class="navbar-brand" href="/"><img src="./assets/hotel48.png">Delonix Regia</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/user" routerLinkActive="active">Home</a>
+      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      
+      <a id= "navLogin" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="nav-item nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+      <a class="nav-item nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+
+    </div> 
+  </div>
+</nav>
+ <!-- routing here --> 
+ <router-outlet></router-outlet>

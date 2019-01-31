@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+    <div class="w3-panel">
+      <h1>Sign Up</h1>
+      <p><input formControlName="name" id="name" placeholder="Your name" required /></p>
+      <p><input formControlName="password" type="password" id="password" placeholder="Your password" /></p>
+      <p><input type="password" id="password" placeholder="Confirm password" /></p>
+      <p><input placeholder="Your age" /></p>
+      <p><input placeholder="Address" /></p>
+      
+      <p><input placeholder="E mail" /></p>
+      <p><input formControlName="role" id="role" placeholder="user/admin" /></p>
+      <p><button class="signup" type="submit">Sign Up</button></p>
+    </div>
+  </div>
+</form>

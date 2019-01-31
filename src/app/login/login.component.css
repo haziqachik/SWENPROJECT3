@@ -1,0 +1,98 @@
+form {
+  position: absolute;
+  left: 0;
+  top: 10;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+}
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    border-radius: 15px 50px 30px;
+    opacity: 0.9;
+  background: rgba(126, 5, 5, 0.644);
+  padding:auto; 
+  width: 450px;
+  height: auto; 
+  border: 5px solid white;
+  
+  }
+  
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .btn1{
+    
+    color:rgb(10, 126, 235);
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid #008CBA;
+    
+}
+.btn1:hover {
+    background-color: #008CBA;
+    color: rgb(255, 255, 255);
+  }
+
+
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  h1 {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .btn{
+    border: none;
+    color:rgb(17, 101, 226);
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid #008CBA;
+    
+}
+.btn:hover {
+    background-color: #008CBA;
+    color: rgb(255, 255, 255);
+  }

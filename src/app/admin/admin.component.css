@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+.card-margin{
+    margin-top: 50px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 12px;
+}
+
+.tableCenter{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputCSS{
+    width: 100%;
+}
+
+.tdWidth{
+    width: 400px
+}
+
+.changeSize{
+    padding: 14px 40px;
+    border-radius: 4px;
+    width: 450px;
+}
+
+.changeSize:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.changeFont{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+.cardImage{
+    padding: 20px;
+}
+
+.contBorder{
+    border: 5px solid white;
+  border-radius: 20px;
+}
+
+.changeFont2{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+.fontChange{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 50px;
+}
+
+.cardTitle{
+    text-transform: uppercase;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 25px;
+    background-image: url("https://image.freepik.com/free-vector/bright-background-with-dots_1055-3132.jpg")
+
+}
+
+.cardText{
+    font-family: 'Titan One', cursive;
+    font-size: 20px;
+}
+.btn{
+    
+    color:rgb(255, 255, 255);
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid #008CBA;
+}
+.btn:hover {
+    background-color: #008CBA;
+    color: rgb(255, 255, 255);
+  }
+  .container {
+      text-align: center;
+   }
+
+h1{
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+    <div class="container">
+        <div class="w3-panel">
+            <h1>Log In</h1>
+            <p><input formControlName="name" type="text" id="name" placeholder=" Your name" required /></p>
+            <p><input formControlName="password" type="password" id="password" placeholder=" Your password" required /></p>
+            <p><button class="btn1" type="submit">Login</button></p>
+            <p><button class="btn1" routerLink="/register" routerLinkActive="active">Sign Up</button></p>
+        </div>
+    </div>
+</form>

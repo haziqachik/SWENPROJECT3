@@ -1,0 +1,81 @@
+form {
+    position: absolute;
+    left: 0;
+    top: 10;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+}
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .container {
+      border-radius: 15px 50px 30px;
+      opacity: 0.9;
+    background: rgba(126, 5, 5, 0.644);
+    padding:auto; 
+    width: 450px;
+    height: auto; 
+    }
+    
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* Set a style for the submit button */
+    .signup {
+        border: none;
+        color:rgb(53, 74, 194);
+        padding: 8px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 5px;
+        
+    }
+    .signup:hover {
+        background-color: #008CBA;
+        color: white;
+      }
+
+    
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+    h1 {
+      color: white;
+    }
+    .btn{
+      background-color: white; 
+      color:rgb(76, 86, 175);
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 50%;
+      opacity: 0.8;
+    }
