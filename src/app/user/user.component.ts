@@ -27,6 +27,16 @@ export class UserComponent implements OnInit {
     // (<HTMLInputElement>document.getElementById("name2")).value=this.hawker.name;
     // document.getElementById("modal2").style.display = "flex";
   }
+  getDetailss(id) {
+    // console.log(id);
+    this.postService.getHawker(id).subscribe(hawkers => {
+      this.specificHawker = hawkers;
+      this.address2 = atob(this.specificHawker.address);
+      this.image2 = atob(this.specificHawker.coverImage);
+    });
+    // (<HTMLInputElement>document.getElementById("name2")).value=this.hawker.name;
+    // document.getElementById("modal2").style.display = "flex";
+  }
 
   getName() {
     const name = this.specificHawker.name;
@@ -91,10 +101,16 @@ export class UserComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-
+  open2(content2) {
+    this.modalService.open(content2, {ariaLabelledBy: 'modal2-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

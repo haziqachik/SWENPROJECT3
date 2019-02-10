@@ -1,6 +1,99 @@
 <div class="container">
-  <button type="button" class="btn changeSize changeFont" (click)='displayModal()'>Book a Room</button>
-<br/><br/><br/>
-
-<button type="button" class="btn changeSize changeFont" (click)='displayModal()'>Check Available Room</button>
+  <div class="row">
+    <div class="col-sm" >
+      <!-- <div class="card card-block card-margin" style="width: 18rem;">
+        <img class="card-img-top" src="{{ decodeImage(post.coverImage) }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title cardTitle">{{ post.name }}</h5>
+          <h5 class="card-text cardText">Crowd: {{ post.people }}</h5> -->
+          
+          <a class="btn" (click)="open2(content2)" (click)="getDetailss(post._id)" >Book a Room</a>
+          <br /><br/> <br/>
+          <a class="btn" (click)="open(content)" (click)="getDetails(post._id)" >Check Room Available</a>
+          <br/> <br/>
+          <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+          <!-- <a href="#" class="btn btn-primary">Review</a> -->
+       
+    </div>
+  </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">Book a Room</h3>
+
+    <button type="button" class="close" aria-label="Next" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <br/>
+   Select level: <select name="level">
+      <option value="volvo">5</option>
+      <option value="saab">6</option>
+      <option value="fiat">7</option>
+      <option value="audi">8</option>
+    </select> 
+    <br/> <br/>
+    Children:
+    <input type="radio" name="gender" value="male" checked> No
+    <input type="radio" name="gender" value="female"> Yes
+   <br> <br/>
+   Select Number of guests: <select name="guests">
+    <option value="volvo">1</option>
+    <option value="saab">2</option>
+    <option value="fiat">3</option>
+    <option value="audi">4 and above</option>
+  </select> 
+  <br/> <br/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Next</button>
+  </div>
+</ng-template>
+
+<ng-template #content2 let-modal2>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal2-basic-title">Details</h3>
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+      <h5>Contact Details:</h5>
+   <input type="text" placeholder="Name"><br/>
+   <input type="text" placeholder="Phone"><br/>
+   <input type="text" placeholder="Email"><br/>
+   <h5>Address:</h5>
+   <input type="text" placeholder="Address"><br/>
+   <input type="text" placeholder="Country"><br/>
+   <input type="text" placeholder="Postal Code"><br/>
+   <h5>CheckIn Details:</h5>
+   <label for="dateOfBirth">Check In Date:</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-primary calendar" (click)="dp.toggle()" type="button">Calendar</button>
+          </div>
+        </div>
+   <h5>Payment Methods:</h5>
+   Pay By Credit Card ?
+   <input type="radio" checked> Yes
+   <input type="radio" > No
+  <br> 
+  <input type="text" placeholder="Card Number"><br/>
+   <input type="text" placeholder="Expiry Date"><br/>
+   <input type="text" placeholder="CVV"><br/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Next</button>
+  </div>
+</ng-template>
+
+<hr>
+
+<pre>{{closeResult}}</pre>
+
+

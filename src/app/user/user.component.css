@@ -7,13 +7,21 @@
 .container{
     text-align: center;
 }
+
 .btn{
     text-align: center;
     border: 2px solid #008CBA;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .btn:hover {
-    background-color: rgb(7, 47, 223);
-    color: rgb(255, 255, 255);
+    background-color: rgb(253, 253, 253);
+    color: rgb(18, 73, 223);
   }
-  
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+  }

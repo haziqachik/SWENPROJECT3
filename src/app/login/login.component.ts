@@ -24,11 +24,12 @@ export class LoginComponent implements OnInit {
     this.authService.authUser(this.myForm.value.name,
       this.myForm.value.password).subscribe(data => {
         this.results = data;
-        if (this.results[0].auth)
-        {
+        console.log("clicked")
+        if (this.results[0].auth) {
           this.authService.setSecureToken(this.myForm.value.name);
           this.router.navigateByUrl('/user');
           this.authService.setUserRole(this.results[0].role);
+          console.log("login")
         }
       });
   }

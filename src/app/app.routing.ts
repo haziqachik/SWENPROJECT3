@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     { path: 'logout', component: LogoutComponent },
     { path: 'user', component: UserComponent, canActivate: [AuthGuard], data: 
     {permission: {only: ["user", "admin"]}} },
-    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: 
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data:
     {permission: {only: ["admin"]}} },
     { path: '', component: LoginComponent, pathMatch: 'full' } 
 ];

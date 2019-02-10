@@ -1,63 +1,163 @@
 <h1 class="fontChange">Welcome Admin..!</h1>
-<div class="container">
-    <button type="button" class="btn changeSize changeFont" (click)='displayModal()'>View Room Listing</button>
 
-    <br />
-    <br />
-    <button type="button" class="btn changeSize changeFont" (click)='displayModal()'>View Room Listing</button>
-    <br />
-    <br />
-    <button type="button" class="btn changeSize changeFont" (click)='displayModal()'>All Guest Listing </button>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm" >
+        <!-- <div class="card card-block card-margin" style="width: 18rem;">
+          <img class="card-img-top" src="{{ decodeImage(post.coverImage) }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title cardTitle">{{ post.name }}</h5>
+            <h5 class="card-text cardText">Crowd: {{ post.people }}</h5> -->
+            
+            <a class="btn" (click)="open2(content2)" (click)="getModal(post._id)" >View Room Status</a>
+            <br /><br/> <br/>
+            <a class="btn" (click)="open3(content3)" (click)="getModalss(post._id)" >View Room Listing</a>
+            <br/> <br/><br/>
+            <a class="btn" (click)="open(content)" (click)="getDetails(post._id)" >All Guest Listing</a>
+            <br/> <br/>
+            <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            <!-- <a href="#" class="btn btn-primary">Review</a> -->
+         
+      </div>
+    </div>
   </div>
-
-    <!-- <div id="modal" class="container tableCenter contBorder" style="display:none">
-      <form class="tdWidth tableCenter" [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
-        <br />
-        <br />
-        <p><input class="inputCSS form-control" formControlName="name" id="name" placeholder="Hawker Centre Name" /></p>
-        <p><input class="inputCSS form-control" formControlName="address" id="address" placeholder="Hawker Centre Address" /></p>
-        <p><input type="number" class="inputCSS form-control" formControlName="people" id="people" placeholder="People" /></p>
-        <p><input type="number" class="inputCSS form-control" formControlName="rating" id="rating" placeholder="Rating" /></p>
-        <p><input class="inputCSS form-control" formControlName="phone" id="phone" placeholder="Contact Number" /></p>
-        <p><input type="email" class="inputCSS form-control" formControlName="email" id="email" placeholder="Email" /></p>
-        <p><input class="inputCSS form-control" formControlName="coverImage" id="coverImage" placeholder="Enter Image URL" /></p>
-        <p> -->
-          <!-- <button class="btn btn-secondary" type="reset" (click)='hideModal()'>Close</button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="btn " type="submit reset" (click)='hideModal()'>Add</button>
-        </p>
-      </form>
+  
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-basic-title">Room Listing</h3>
+  
+      <button type="button" class="close" aria-label="Next" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    <div class="modal-body">
+      <br/>
+     <table>
+       <tr>
+         <th>Room Id</th>
+         <th>Number of guests</th>
+         <th>Name of guest</th>
+         <th>Checkin date</th>
+         <th>Checkout date</th>
+       </tr>
+       <tr>
+        <td>1</td>
+        <td>Haziq</td>
+        <td>2</td>
+        <td>01/09/2019</td>
+        <td>03/09/2019</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Raj</td>
+        <td>4</td>
+        <td>01/09/2019</td>
+        <td>04/09/2019</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Frederick</td>
+        <td>2</td>
+        <td>03/09/2019</td>
+        <td>06/09/2019</td>
+      </tr>
 
-    <br />
-    <br />
-
-    <div id="modal2" class="container tableCenter contBorder" style="display:none">
-      <form class="tdWidth tableCenter" [formGroup]="myForm2">
-        <br />
-        <br />
-        <h2 class="changeFont2">Update/Delete Data</h2>
-        <br />
-        <div class="card card-block" style="width: 25rem;">
-          <img class="card-img-top cardImage" src="{{getImage()}}" alt="Card image cap">
-        </div>
-        <br />
-        <p><input class="inputCSS form-control" formControlName="name" id="name" value="{{getName()}}" /></p>
-        <p><input class="inputCSS form-control" formControlName="address" id="address" value="{{getAddress()}}" /></p>
-        <p><input type="number" class="inputCSS form-control" formControlName="people" id="people" value="{{getPeople()}}" /></p>
-        <p><input type="number" class="inputCSS form-control" formControlName="rating" id="rating" value="{{getRating()}}" /></p>
-        <p><input type="number" class="inputCSS form-control" formControlName="phone" id="phone" value="{{getPhone()}}" /></p>
-        <p><input type="email" class="inputCSS form-control" formControlName="email" id="email" value="{{getEmail()}}" /></p>
-        <p><input class="inputCSS form-control" formControlName="coverImage" id="coverImage" value="{{getImage()}}" /></p>
-        <p>
-          <button class="btn btn-primary" (click)="hideModal2()">Close</button>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-primary" (click)="deleteHawker()" >Delete</button>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-primary" (click)="increaseQuote()" >Update</button>
-        </p>
-      </form>
+     </table>
     </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Next</button>
+    </div>
+  </ng-template>
+  
+  <ng-template #content2 let-modal2>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal2-basic-title">Room Status</h3>
+  
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <br/>
+      <table>
+        <tr>
+          <th>Room Id</th>
+          <th>Room title</th>
+          <th>Status</th>
+          
+        </tr>
+        <tr>
+         <td>1</td>
+         <td>Deluxe</td>
+         <td>Occupied</td>
+         
+       </tr>
+       <tr>
+         <td>3</td>
+         <td>Basic</td>
+         <td>Vaccant</td>
+         
+       </tr>
+       <tr>
+         <td>5</td>
+         <td>Basic</td>
+         <td>Occupied</td>
+         
+       </tr>
+ 
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Next</button>
+    </div>
+  </ng-template>
 
-  </td>
-</table> -->
+  <ng-template #content3 let-modal3>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal3-basic-title">Room Listing</h3>
+  
+      <button type="button" class="close" aria-label="Next" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <br/>
+     <table>
+       <tr>
+         <th>Room Id</th>
+         <th>Number of guests</th>
+         <th>Name of guest</th>
+         <th>Children: Yes/No</th>
+         
+       </tr>
+       <tr>
+        <td>1</td>
+        <td>Haziq</td>
+        <td>2</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Raj</td>
+        <td>4</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Frederick</td>
+        <td>2</td>
+        <td>No</td>
+      </tr>
+
+     </table>
+    </div>
+  
+  <hr>
+  
+  <pre>{{closeResult}}</pre>
+  
+  Created and developed by Pradhun Raj
+  
+  
+  

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { stringify } from '@angular/core/src/render3/util';
 import { createLoweredSymbol } from '@angular/compiler';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -16,11 +17,43 @@ export class AdminComponent {
   title = 'List of Posts';
   myForm: FormGroup;
   myForm2: FormGroup;
+  specificHawker: any = [];
   posts: any = [];
   hawker: any = [];
+  closeResult: string;
   address2: any;
   image2: any;
 
+  getModal(id) {
+    // console.log(id);
+    this.postService.getHawker(id).subscribe(hawkers => {
+      this.specificHawker = hawkers;
+      this.address2 = atob(this.specificHawker.address);
+      this.image2 = atob(this.specificHawker.coverImage);
+    });
+    // (<HTMLInputElement>document.getElementById("name2")).value=this.hawker.name;
+    // document.getElementById("modal2").style.display = "flex";
+  }
+  getModals(id) {
+    // console.log(id);
+    this.postService.getHawker(id).subscribe(hawkers => {
+      this.specificHawker = hawkers;
+      this.address2 = atob(this.specificHawker.address);
+      this.image2 = atob(this.specificHawker.coverImage);
+    });
+    // (<HTMLInputElement>document.getElementById("name2")).value=this.hawker.name;
+    // document.getElementById("modal2").style.display = "flex";
+  }
+  getModalss(id) {
+    // console.log(id);
+    this.postService.getHawker(id).subscribe(hawkers => {
+      this.specificHawker = hawkers;
+      this.address2 = atob(this.specificHawker.address);
+      this.image2 = atob(this.specificHawker.coverImage);
+    });
+    // (<HTMLInputElement>document.getElementById("name2")).value=this.hawker.name;
+    // document.getElementById("modal2").style.display = "flex";
+  }
   decodeImage(image) {
     const decodedImage = atob(image);
     // console.log(decodedImage);
@@ -88,7 +121,7 @@ export class AdminComponent {
     return image;
   }
 
-  constructor(private fb: FormBuilder, private postService: PostService) {
+  constructor(private fb: FormBuilder, private postService: PostService, private modalService: NgbModal) {
     // Retrieve posts from the API
     this.postService.getAllPosts().subscribe(posts => {
       this.posts = posts;
@@ -203,5 +236,25 @@ export class AdminComponent {
   reloadPage(){
     location.reload();
   }
-
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  open2(content2) {
+    this.modalService.open(content2, {ariaLabelledBy: 'modal2-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  open3(content3) {
+    this.modalService.open(content3, {ariaLabelledBy: 'modal2-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 }
